@@ -39,13 +39,12 @@ pipeline {
             steps {
                 script {
                     // Assuming SonarScanner is installed and sonar-scanner is in the PATH
-                    bat '''sonar-scanner 
-                    -Dsonar.projectKey=Unit-test-pipeline
-                    -Dsonar.sources=src 
-                    -Dsonar.tests=test 
-                    -Dsonar.python.coverage.reportPaths=coverage.xml 
-                    -Dsonar.host.url=http://localhost:9000 
-                    -Dsonar.login=sqp_79bcd4679fe89310113d0e51792b56e2db430fbf
+                    bat '''sonar-scanner ^
+                    -Dsonar.projectKey=Unit-test-pipeline^
+                    -Dsonar.sources=src ^
+                    -Dsonar.tests=test ^
+                    -Dsonar.host.url=http://localhost:9000 ^
+                    -Dsonar.login=sqp_79bcd4679fe89310113d0e51792b56e2db430fbf^
                     '''
 
 
