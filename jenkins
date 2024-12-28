@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     
-                 bat 'pytest --cov=src --cov-report xml:coverage.xml'
+                  bat 'set PYTHONPATH=%WORKSPACE%\\src && pytest --cov=src --cov-report xml:coverage.xml'
 
                     
                 }
