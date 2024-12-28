@@ -46,8 +46,8 @@ pipeline {
                     bat '''
                     %SONAR_SCANNER_PATH% ^
                     -Dsonar.projectKey=Unit-test-pipeline^
-                    -Dsonar.sources=src ^
-                    -Dsonar.tests=test ^
+                    -Dsonar.sources=. ^
+                    -Dsonar.tests=. ^
                     -Dsonar.host.url=http://localhost:9000 ^
                     -Dsonar.login=%SONAR_TOKEN% 
                     '''
