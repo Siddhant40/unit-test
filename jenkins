@@ -50,7 +50,7 @@ pipeline {
                     -Dsonar.tests=. ^
                     -Dsonar.host.url=http://localhost:9000 ^
                     -Dsonar.token=%SONAR_TOKEN% ^
-                    -Dsonar.exclusions=**/.coverage,**/coverage.xml'''
+                    -Dsonar.exclusions=**/.coverage,**/coverage.xml
                     '''
                 }
             }
