@@ -36,6 +36,9 @@ pipeline {
         }
 
         stage('Run SonarQube Analysis') {
+            environment {
+                SONAR_TOKEN = credentials('SonarQube')
+            }
             steps {
                 script {
                     // Assuming SonarScanner is installed and sonar-scanner is in the PATH
@@ -44,10 +47,8 @@ pipeline {
                     -Dsonar.sources=src ^
                     -Dsonar.tests=test ^
                     -Dsonar.host.url=http://localhost:9000 ^
-                    -Dsonar.login=sqp_79bcd4679fe89310113d0e51792b56e2db430fbf^
+                    -Dsonar.login=%SONAR_TOKEN% 
                     '''
-
-
                 }
             }
         }
@@ -55,8 +56,8 @@ pipeline {
 
     post {
         always {
-            // Clean up after the build, deactivate virtual environment
-            bat 'deactivate' 
+            // No need to deactivate the virtual environment here
+            echo 'Build completed, no need to deactivate virtual environment in Jenkins.'
         }
 
         success {
