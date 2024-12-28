@@ -49,7 +49,8 @@ pipeline {
                     -Dsonar.sources=. ^
                     -Dsonar.tests=. ^
                     -Dsonar.host.url=http://localhost:9000 ^
-                    -Dsonar.login=%SONAR_TOKEN% 
+                    -Dsonar.token=%SONAR_TOKEN% ^
+                    -Dsonar.exclusions=**/.coverage,**/coverage.xml'''
                     '''
                 }
             }
