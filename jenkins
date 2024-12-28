@@ -45,7 +45,7 @@ pipeline {
                     // Assuming SonarScanner is installed and sonar-scanner is in the PATH
                     bat '''
                     %SONAR_SCANNER_PATH% ^
-                    sonar-scanner -Dsonar.projectKey=Unit-test-pipeline^
+                    -Dsonar.projectKey=Unit-test-pipeline^
                     -Dsonar.sources=src ^
                     -Dsonar.tests=test ^
                     -Dsonar.host.url=http://localhost:9000 ^
